@@ -114,6 +114,7 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
+	fmt.Println(movie)
 	insertOneMovie(movie)
 	json.NewEncoder(w).Encode(movie)
 }
